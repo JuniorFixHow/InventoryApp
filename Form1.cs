@@ -167,6 +167,7 @@ namespace InventoryApp
         private void button1_Click(object sender, EventArgs e)
         {
             showForm(new Form2());
+            label2.Text = "Home";
         }
 
         private void button2_Click(object sender, EventArgs e)

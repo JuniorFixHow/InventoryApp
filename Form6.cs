@@ -23,20 +23,17 @@ namespace InventoryApp
             Application.Run(new Form1());
         }
 
-        private void showForm(object form)
+        private void openPass(object form)
         {
-            panel1.Controls.Clear();
-            Form currentForm = form as Form;
-            currentForm.TopLevel = false;
-            currentForm.Dock = DockStyle.Fill;
-            panel1.Tag = currentForm;
-            panel1.Controls.Add(currentForm);
-            currentForm.Show();
+            Application.Run(new Form8());
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            showForm(new Form8());
+            this.Close();
+            thread = new Thread(openPass);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)

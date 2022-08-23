@@ -31,3 +31,12 @@ E:\Users\annan\source\repos\InventoryApp\obj\Debug\net6.0-windows\InventoryApp.F
 E:\Users\annan\source\repos\InventoryApp\obj\Debug\net6.0-windows\InventoryApp.Form7.resources
 E:\Users\annan\source\repos\InventoryApp\obj\Debug\net6.0-windows\InventoryApp.Form8.resources
 E:\Users\annan\source\repos\InventoryApp\obj\Debug\net6.0-windows\InventoryApp.Form9.resources
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\Google.Protobuf.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\MySql.Data.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\Ubiety.Dns.Core.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\ZstdNet.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+E:\Users\annan\source\repos\InventoryApp\obj\Debug\net6.0-windows\InventoryApp.csproj.CopyComplete

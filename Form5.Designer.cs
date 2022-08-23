@@ -31,20 +31,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.utype = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.uname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.upass = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.uemail = new System.Windows.Forms.TextBox();
+            this.uphone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.uaddress = new System.Windows.Forms.TextBox();
+            this.errorLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -94,17 +95,21 @@
             this.button2.TabIndex = 40;
             this.button2.Text = "Post";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox2
+            // utype
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(480, 297);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(222, 31);
-            this.comboBox2.TabIndex = 39;
+            this.utype.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.utype.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.utype.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.utype.FormattingEnabled = true;
+            this.utype.Items.AddRange(new object[] {
+            "Management",
+            "Attendant"});
+            this.utype.Location = new System.Drawing.Point(480, 297);
+            this.utype.Name = "utype";
+            this.utype.Size = new System.Drawing.Size(222, 31);
+            this.utype.TabIndex = 39;
             // 
             // textBox1
             // 
@@ -154,17 +159,17 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "User ID";
             // 
-            // textBox2
+            // uname
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(205, 162);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 26);
-            this.textBox2.TabIndex = 33;
+            this.uname.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.uname.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uname.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.uname.Location = new System.Drawing.Point(205, 162);
+            this.uname.Multiline = true;
+            this.uname.Name = "uname";
+            this.uname.Size = new System.Drawing.Size(222, 26);
+            this.uname.TabIndex = 33;
             // 
             // label2
             // 
@@ -178,17 +183,17 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Password";
             // 
-            // textBox6
+            // upass
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox6.Location = new System.Drawing.Point(480, 162);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(222, 26);
-            this.textBox6.TabIndex = 33;
+            this.upass.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.upass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.upass.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.upass.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.upass.Location = new System.Drawing.Point(480, 162);
+            this.upass.Multiline = true;
+            this.upass.Name = "upass";
+            this.upass.Size = new System.Drawing.Size(222, 26);
+            this.upass.TabIndex = 33;
             // 
             // label9
             // 
@@ -214,29 +219,29 @@
             this.label10.TabIndex = 26;
             this.label10.Text = "Phone";
             // 
-            // textBox7
+            // uemail
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox7.Location = new System.Drawing.Point(205, 233);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(222, 26);
-            this.textBox7.TabIndex = 33;
+            this.uemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uemail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.uemail.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uemail.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.uemail.Location = new System.Drawing.Point(205, 233);
+            this.uemail.Multiline = true;
+            this.uemail.Name = "uemail";
+            this.uemail.Size = new System.Drawing.Size(222, 26);
+            this.uemail.TabIndex = 33;
             // 
-            // textBox8
+            // uphone
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox8.Location = new System.Drawing.Point(480, 233);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(222, 26);
-            this.textBox8.TabIndex = 33;
+            this.uphone.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uphone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.uphone.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uphone.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.uphone.Location = new System.Drawing.Point(480, 233);
+            this.uphone.Multiline = true;
+            this.uphone.Name = "uphone";
+            this.uphone.Size = new System.Drawing.Size(222, 26);
+            this.uphone.TabIndex = 33;
             // 
             // label7
             // 
@@ -250,17 +255,30 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Address";
             // 
-            // textBox4
+            // uaddress
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox4.Location = new System.Drawing.Point(207, 297);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(222, 26);
-            this.textBox4.TabIndex = 33;
+            this.uaddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.uaddress.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uaddress.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.uaddress.Location = new System.Drawing.Point(207, 297);
+            this.uaddress.Multiline = true;
+            this.uaddress.Name = "uaddress";
+            this.uaddress.Size = new System.Drawing.Size(222, 26);
+            this.uaddress.TabIndex = 33;
+            // 
+            // errorLbl
+            // 
+            this.errorLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.errorLbl.AutoSize = true;
+            this.errorLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 13.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.errorLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.errorLbl.Location = new System.Drawing.Point(474, 77);
+            this.errorLbl.Name = "errorLbl";
+            this.errorLbl.Size = new System.Drawing.Size(90, 25);
+            this.errorLbl.TabIndex = 26;
+            this.errorLbl.Text = "Password";
+            this.errorLbl.Visible = false;
             // 
             // Form5
             // 
@@ -271,15 +289,16 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.utype);
+            this.Controls.Add(this.uphone);
+            this.Controls.Add(this.upass);
+            this.Controls.Add(this.uaddress);
+            this.Controls.Add(this.uemail);
+            this.Controls.Add(this.uname);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.errorLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
@@ -288,6 +307,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form5";
             this.Text = "Form5";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,19 +317,20 @@
         private Button button1;
         private Button button3;
         private Button button2;
-        private ComboBox comboBox2;
+        private ComboBox utype;
         private TextBox textBox1;
         private Label label4;
         private Label label3;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox uname;
         private Label label2;
-        private TextBox textBox6;
+        private TextBox upass;
         private Label label9;
         private Label label10;
-        private TextBox textBox7;
-        private TextBox textBox8;
+        private TextBox uemail;
+        private TextBox uphone;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox uaddress;
+        private Label errorLbl;
     }
 }
