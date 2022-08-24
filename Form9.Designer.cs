@@ -30,14 +30,15 @@
         {
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.odQuant = new System.Windows.Forms.TextBox();
+            this.odProd = new System.Windows.Forms.TextBox();
+            this.oId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
+            this.errorLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,12 +51,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(219, 278);
+            this.button3.Location = new System.Drawing.Point(218, 288);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 45);
             this.button3.TabIndex = 50;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -66,48 +68,49 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(61, 278);
+            this.button2.Location = new System.Drawing.Point(60, 288);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 45);
             this.button2.TabIndex = 49;
             this.button2.Text = "Submit";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox4
+            // odQuant
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox4.Location = new System.Drawing.Point(61, 220);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(127, 26);
-            this.textBox4.TabIndex = 46;
+            this.odQuant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.odQuant.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.odQuant.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.odQuant.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.odQuant.Location = new System.Drawing.Point(61, 220);
+            this.odQuant.Multiline = true;
+            this.odQuant.Name = "odQuant";
+            this.odQuant.Size = new System.Drawing.Size(127, 26);
+            this.odQuant.TabIndex = 46;
             // 
-            // textBox7
+            // odProd
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox7.Location = new System.Drawing.Point(59, 156);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(222, 26);
-            this.textBox7.TabIndex = 47;
+            this.odProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.odProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.odProd.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.odProd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.odProd.Location = new System.Drawing.Point(59, 156);
+            this.odProd.Multiline = true;
+            this.odProd.Name = "odProd";
+            this.odProd.Size = new System.Drawing.Size(222, 26);
+            this.odProd.TabIndex = 47;
             // 
-            // textBox2
+            // oId
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(59, 85);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 26);
-            this.textBox2.TabIndex = 48;
+            this.oId.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.oId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.oId.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.oId.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.oId.Location = new System.Drawing.Point(59, 85);
+            this.oId.Multiline = true;
+            this.oId.Name = "oId";
+            this.oId.Size = new System.Drawing.Size(129, 26);
+            this.oId.TabIndex = 48;
             // 
             // label7
             // 
@@ -173,6 +176,19 @@
             this.button4.Text = "Print";
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // errorLbl
+            // 
+            this.errorLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.errorLbl.AutoSize = true;
+            this.errorLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.errorLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.errorLbl.Location = new System.Drawing.Point(57, 260);
+            this.errorLbl.Name = "errorLbl";
+            this.errorLbl.Size = new System.Drawing.Size(47, 23);
+            this.errorLbl.TabIndex = 43;
+            this.errorLbl.Text = "error";
+            this.errorLbl.Visible = false;
+            // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -183,9 +199,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.odQuant);
+            this.Controls.Add(this.odProd);
+            this.Controls.Add(this.oId);
+            this.Controls.Add(this.errorLbl);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
@@ -202,13 +219,14 @@
 
         private Button button3;
         private Button button2;
-        private TextBox textBox4;
-        private TextBox textBox7;
-        private TextBox textBox2;
+        private TextBox odQuant;
+        private TextBox odProd;
+        private TextBox oId;
         private Label label7;
         private Label label9;
         private Label label3;
         private DataGridView dataGridView1;
         private Button button4;
+        private Label errorLbl;
     }
 }

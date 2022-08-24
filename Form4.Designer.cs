@@ -30,22 +30,25 @@
         {
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.sPrice = new System.Windows.Forms.TextBox();
+            this.sQuant = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.titleLbl = new System.Windows.Forms.Label();
+            this.catTxt = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.sCat = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sProd = new System.Windows.Forms.TextBox();
+            this.errorLbl = new System.Windows.Forms.Label();
+            this.markIcon = new System.Windows.Forms.Button();
+            this.errorLb = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button3
@@ -57,7 +60,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(186, 277);
+            this.button3.Location = new System.Drawing.Point(179, 292);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 45);
             this.button3.TabIndex = 24;
@@ -73,36 +76,37 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(28, 277);
+            this.button2.Location = new System.Drawing.Point(21, 292);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 45);
             this.button2.TabIndex = 23;
             this.button2.Text = "Post";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox4
+            // sPrice
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox4.Location = new System.Drawing.Point(79, 223);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(136, 26);
-            this.textBox4.TabIndex = 18;
+            this.sPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sPrice.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sPrice.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sPrice.Location = new System.Drawing.Point(79, 223);
+            this.sPrice.Multiline = true;
+            this.sPrice.Name = "sPrice";
+            this.sPrice.Size = new System.Drawing.Size(136, 26);
+            this.sPrice.TabIndex = 18;
             // 
-            // textBox3
+            // sQuant
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox3.Location = new System.Drawing.Point(310, 155);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(108, 26);
-            this.textBox3.TabIndex = 17;
+            this.sQuant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sQuant.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sQuant.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sQuant.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sQuant.Location = new System.Drawing.Point(310, 155);
+            this.sQuant.Multiline = true;
+            this.sQuant.Name = "sQuant";
+            this.sQuant.Size = new System.Drawing.Size(108, 26);
+            this.sQuant.TabIndex = 17;
             // 
             // label7
             // 
@@ -128,17 +132,17 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Set Price";
             // 
-            // textBox1
+            // sId
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(36, 87);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 26);
-            this.textBox1.TabIndex = 15;
+            this.sId.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sId.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sId.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sId.Location = new System.Drawing.Point(29, 87);
+            this.sId.Multiline = true;
+            this.sId.Name = "sId";
+            this.sId.Size = new System.Drawing.Size(145, 26);
+            this.sId.TabIndex = 15;
             // 
             // label5
             // 
@@ -170,7 +174,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(138)))), ((int)(((byte)(233)))));
-            this.label3.Location = new System.Drawing.Point(310, 59);
+            this.label3.Location = new System.Drawing.Point(307, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 25);
             this.label3.TabIndex = 8;
@@ -182,35 +186,35 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(138)))), ((int)(((byte)(233)))));
-            this.label1.Location = new System.Drawing.Point(26, 59);
+            this.label1.Location = new System.Drawing.Point(24, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Stock ID";
             // 
-            // label8
+            // titleLbl
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(138)))), ((int)(((byte)(233)))));
-            this.label8.Location = new System.Drawing.Point(635, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 25);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Add New Category";
+            this.titleLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titleLbl.AutoSize = true;
+            this.titleLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.titleLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(138)))), ((int)(((byte)(233)))));
+            this.titleLbl.Location = new System.Drawing.Point(635, 59);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(175, 25);
+            this.titleLbl.TabIndex = 8;
+            this.titleLbl.Text = "Add New Category";
             // 
-            // textBox5
+            // catTxt
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox5.Location = new System.Drawing.Point(642, 87);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(232, 26);
-            this.textBox5.TabIndex = 16;
+            this.catTxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.catTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.catTxt.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.catTxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.catTxt.Location = new System.Drawing.Point(642, 87);
+            this.catTxt.Multiline = true;
+            this.catTxt.Name = "catTxt";
+            this.catTxt.Size = new System.Drawing.Size(232, 26);
+            this.catTxt.TabIndex = 16;
             // 
             // button4
             // 
@@ -227,6 +231,7 @@
             this.button4.TabIndex = 23;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -243,17 +248,18 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // comboBox3
+            // sCat
             // 
-            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(310, 87);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(222, 31);
-            this.comboBox3.TabIndex = 19;
+            this.sCat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sCat.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sCat.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sCat.FormattingEnabled = true;
+            this.sCat.Location = new System.Drawing.Point(310, 87);
+            this.sCat.Name = "sCat";
+            this.sCat.Size = new System.Drawing.Size(222, 31);
+            this.sCat.TabIndex = 19;
             // 
             // button1
             // 
@@ -264,24 +270,67 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(347, 277);
+            this.button1.Location = new System.Drawing.Point(340, 292);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 45);
             this.button1.TabIndex = 24;
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // sProd
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(30, 155);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(232, 26);
-            this.textBox2.TabIndex = 16;
+            this.sProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sProd.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sProd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.sProd.Location = new System.Drawing.Point(30, 155);
+            this.sProd.Multiline = true;
+            this.sProd.Name = "sProd";
+            this.sProd.Size = new System.Drawing.Size(232, 26);
+            this.sProd.TabIndex = 16;
+            // 
+            // errorLbl
+            // 
+            this.errorLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.errorLbl.AutoSize = true;
+            this.errorLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(3)))), ((int)(((byte)(52)))));
+            this.errorLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.errorLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.errorLbl.Location = new System.Drawing.Point(607, 84);
+            this.errorLbl.Name = "errorLbl";
+            this.errorLbl.Size = new System.Drawing.Size(29, 37);
+            this.errorLbl.TabIndex = 8;
+            this.errorLbl.Text = "*";
+            this.errorLbl.Visible = false;
+            // 
+            // markIcon
+            // 
+            this.markIcon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.markIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.markIcon.FlatAppearance.BorderSize = 0;
+            this.markIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.markIcon.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.markIcon.ForeColor = System.Drawing.Color.White;
+            this.markIcon.Image = global::InventoryApp.Properties.Resources.icons8_check_mark_30__1_;
+            this.markIcon.Location = new System.Drawing.Point(596, 83);
+            this.markIcon.Name = "markIcon";
+            this.markIcon.Size = new System.Drawing.Size(40, 35);
+            this.markIcon.TabIndex = 23;
+            this.markIcon.UseVisualStyleBackColor = false;
+            this.markIcon.Visible = false;
+            // 
+            // errorLb
+            // 
+            this.errorLb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.errorLb.AutoSize = true;
+            this.errorLb.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.errorLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.errorLb.Location = new System.Drawing.Point(16, 264);
+            this.errorLb.Name = "errorLb";
+            this.errorLb.Size = new System.Drawing.Size(47, 23);
+            this.errorLb.TabIndex = 12;
+            this.errorLb.Text = "error";
+            this.errorLb.Visible = false;
             // 
             // Form4
             // 
@@ -292,21 +341,24 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.markIcon);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.sCat);
+            this.Controls.Add(this.sPrice);
+            this.Controls.Add(this.sQuant);
+            this.Controls.Add(this.sProd);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.errorLb);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.sId);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.errorLbl);
+            this.Controls.Add(this.titleLbl);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.catTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form4";
             this.Text = "Form4";
@@ -320,21 +372,24 @@
 
         private Button button3;
         private Button button2;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox sPrice;
+        private TextBox sQuant;
         private Label label7;
         private Label label6;
-        private TextBox textBox1;
+        private TextBox sId;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label1;
-        private Label label8;
-        private TextBox textBox5;
+        private Label titleLbl;
+        private TextBox catTxt;
         private Button button4;
         private Button button5;
-        private ComboBox comboBox3;
+        private ComboBox sCat;
         private Button button1;
-        private TextBox textBox2;
+        private TextBox sProd;
+        private Label errorLbl;
+        private Button markIcon;
+        private Label errorLb;
     }
 }

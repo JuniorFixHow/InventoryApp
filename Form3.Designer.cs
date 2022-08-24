@@ -30,18 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tCat = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tCust = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tProd = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tQuant = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tPrice = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.errorLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -89,16 +90,16 @@
             this.textBox1.Size = new System.Drawing.Size(145, 26);
             this.textBox1.TabIndex = 1;
             // 
-            // comboBox1
+            // tCat
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(40, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(222, 31);
-            this.comboBox1.TabIndex = 2;
+            this.tCat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tCat.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tCat.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tCat.FormattingEnabled = true;
+            this.tCat.Location = new System.Drawing.Point(40, 149);
+            this.tCat.Name = "tCat";
+            this.tCat.Size = new System.Drawing.Size(222, 31);
+            this.tCat.TabIndex = 2;
             // 
             // label2
             // 
@@ -124,17 +125,18 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Customer";
             // 
-            // textBox2
+            // tCust
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(321, 82);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(232, 26);
-            this.textBox2.TabIndex = 1;
+            this.tCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tCust.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tCust.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tCust.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tCust.Location = new System.Drawing.Point(321, 82);
+            this.tCust.Multiline = true;
+            this.tCust.Name = "tCust";
+            this.tCust.Size = new System.Drawing.Size(232, 26);
+            this.tCust.TabIndex = 1;
+            this.tCust.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label4
             // 
@@ -148,16 +150,16 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Product";
             // 
-            // comboBox2
+            // tProd
             // 
-            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(40, 222);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(222, 31);
-            this.comboBox2.TabIndex = 2;
+            this.tProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tProd.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tProd.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tProd.FormattingEnabled = true;
+            this.tProd.Location = new System.Drawing.Point(40, 222);
+            this.tProd.Name = "tProd";
+            this.tProd.Size = new System.Drawing.Size(222, 31);
+            this.tProd.TabIndex = 2;
             // 
             // label5
             // 
@@ -171,17 +173,17 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Quantity";
             // 
-            // textBox3
+            // tQuant
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox3.Location = new System.Drawing.Point(322, 225);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(108, 26);
-            this.textBox3.TabIndex = 1;
+            this.tQuant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tQuant.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tQuant.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tQuant.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tQuant.Location = new System.Drawing.Point(322, 225);
+            this.tQuant.Multiline = true;
+            this.tQuant.Name = "tQuant";
+            this.tQuant.Size = new System.Drawing.Size(108, 26);
+            this.tQuant.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -221,17 +223,17 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Price";
             // 
-            // textBox4
+            // tPrice
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox4.Location = new System.Drawing.Point(93, 294);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(169, 26);
-            this.textBox4.TabIndex = 1;
+            this.tPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tPrice.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tPrice.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tPrice.Location = new System.Drawing.Point(93, 294);
+            this.tPrice.Multiline = true;
+            this.tPrice.Name = "tPrice";
+            this.tPrice.Size = new System.Drawing.Size(169, 26);
+            this.tPrice.TabIndex = 1;
             // 
             // label7
             // 
@@ -260,6 +262,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Post";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -449,7 +452,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(138)))), ((int)(((byte)(233)))));
-            this.label8.Location = new System.Drawing.Point(623, 54);
+            this.label8.Location = new System.Drawing.Point(619, 54);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 25);
             this.label8.TabIndex = 0;
@@ -471,6 +474,19 @@
             this.button4.Text = "Print";
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // errorLbl
+            // 
+            this.errorLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.errorLbl.AutoSize = true;
+            this.errorLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.errorLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.errorLbl.Location = new System.Drawing.Point(119, 330);
+            this.errorLbl.Name = "errorLbl";
+            this.errorLbl.Size = new System.Drawing.Size(47, 23);
+            this.errorLbl.TabIndex = 0;
+            this.errorLbl.Text = "Error";
+            this.errorLbl.Visible = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -483,12 +499,13 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tProd);
+            this.Controls.Add(this.tCat);
+            this.Controls.Add(this.tPrice);
+            this.Controls.Add(this.tQuant);
+            this.Controls.Add(this.tCust);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.errorLbl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
@@ -513,18 +530,18 @@
 
         private Label label1;
         private TextBox textBox1;
-        private ComboBox comboBox1;
+        private ComboBox tCat;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox tCust;
         private Label label4;
-        private ComboBox comboBox2;
+        private ComboBox tProd;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox tQuant;
         private PictureBox pictureBox1;
         private Button button1;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox tPrice;
         private Label label7;
         private Button button2;
         private Button button3;
@@ -544,5 +561,6 @@
         private Label label9;
         private Label label8;
         private Button button4;
+        private Label errorLbl;
     }
 }

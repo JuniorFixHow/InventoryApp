@@ -21,7 +21,7 @@ namespace InventoryApp
                     connection.Open();
                 }
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
                 MessageBox.Show("Error occured trying to connect to the database!");
             }
@@ -37,7 +37,7 @@ namespace InventoryApp
                     connection.Close();
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error occured trying to terminate database connection!");
             }

@@ -43,5 +43,10 @@ namespace InventoryApp
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

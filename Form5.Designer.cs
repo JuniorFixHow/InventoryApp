@@ -32,7 +32,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.utype = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.button1.TabIndex = 43;
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -79,6 +80,7 @@
             this.button3.TabIndex = 42;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -111,17 +113,17 @@
             this.utype.Size = new System.Drawing.Size(222, 31);
             this.utype.TabIndex = 39;
             // 
-            // textBox1
+            // uid
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(205, 84);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 26);
-            this.textBox1.TabIndex = 33;
+            this.uid.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.uid.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uid.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.uid.Location = new System.Drawing.Point(205, 84);
+            this.uid.Multiline = true;
+            this.uid.Name = "uid";
+            this.uid.Size = new System.Drawing.Size(145, 26);
+            this.uid.TabIndex = 33;
             // 
             // label4
             // 
@@ -295,7 +297,7 @@
             this.Controls.Add(this.uaddress);
             this.Controls.Add(this.uemail);
             this.Controls.Add(this.uname);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.uid);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.errorLbl);
@@ -318,7 +320,7 @@
         private Button button3;
         private Button button2;
         private ComboBox utype;
-        private TextBox textBox1;
+        private TextBox uid;
         private Label label4;
         private Label label3;
         private Label label1;
