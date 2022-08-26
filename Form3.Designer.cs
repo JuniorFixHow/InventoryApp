@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tCat = new System.Windows.Forms.ComboBox();
@@ -38,7 +39,6 @@
             this.tProd = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tQuant = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tPrice = new System.Windows.Forms.TextBox();
@@ -47,11 +47,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.rPrice = new System.Windows.Forms.Label();
+            this.rQuant = new System.Windows.Forms.Label();
+            this.rProd = new System.Windows.Forms.Label();
+            this.rCust = new System.Windows.Forms.Label();
+            this.rDate = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -62,8 +62,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.errorLbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.barcodeLbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.barcodeCombo = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,6 +97,7 @@
             // tCat
             // 
             this.tCat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tCat.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tCat.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tCat.FormattingEnabled = true;
@@ -100,6 +105,7 @@
             this.tCat.Name = "tCat";
             this.tCat.Size = new System.Drawing.Size(222, 31);
             this.tCat.TabIndex = 2;
+            this.tCat.SelectedIndexChanged += new System.EventHandler(this.tCat_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -153,6 +159,7 @@
             // tProd
             // 
             this.tProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tProd.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tProd.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tProd.FormattingEnabled = true;
@@ -160,6 +167,7 @@
             this.tProd.Name = "tProd";
             this.tProd.Size = new System.Drawing.Size(222, 31);
             this.tProd.TabIndex = 2;
+            this.tProd.SelectedIndexChanged += new System.EventHandler(this.tProd_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -184,17 +192,8 @@
             this.tQuant.Name = "tQuant";
             this.tQuant.Size = new System.Drawing.Size(108, 26);
             this.tQuant.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Image = global::InventoryApp.Properties.Resources._Barcode_32896;
-            this.pictureBox1.Location = new System.Drawing.Point(469, 166);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 87);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.tQuant.TextChanged += new System.EventHandler(this.tQuant_TextChanged);
+            this.tQuant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tQuant_KeyDown);
             // 
             // button1
             // 
@@ -205,11 +204,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::InventoryApp.Properties.Resources.icons8_add_25;
-            this.button1.Location = new System.Drawing.Point(549, 231);
+            this.button1.Location = new System.Drawing.Point(573, 225);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 26);
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -285,11 +285,11 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.rPrice);
+            this.panel1.Controls.Add(this.rQuant);
+            this.panel1.Controls.Add(this.rProd);
+            this.panel1.Controls.Add(this.rCust);
+            this.panel1.Controls.Add(this.rDate);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label16);
@@ -313,60 +313,55 @@
             this.label21.TabIndex = 1;
             this.label21.Text = "JuniorFixHow";
             // 
-            // label19
+            // rPrice
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(101, 171);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 20);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "GHC 8.00";
+            this.rPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rPrice.AutoSize = true;
+            this.rPrice.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rPrice.Location = new System.Drawing.Point(101, 171);
+            this.rPrice.Name = "rPrice";
+            this.rPrice.Size = new System.Drawing.Size(0, 20);
+            this.rPrice.TabIndex = 1;
             // 
-            // label17
+            // rQuant
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(101, 140);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(17, 20);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "2";
+            this.rQuant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rQuant.AutoSize = true;
+            this.rQuant.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rQuant.Location = new System.Drawing.Point(101, 140);
+            this.rQuant.Name = "rQuant";
+            this.rQuant.Size = new System.Drawing.Size(0, 20);
+            this.rQuant.TabIndex = 1;
             // 
-            // label15
+            // rProd
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(101, 112);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 20);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Soap";
+            this.rProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rProd.AutoSize = true;
+            this.rProd.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rProd.Location = new System.Drawing.Point(101, 112);
+            this.rProd.Name = "rProd";
+            this.rProd.Size = new System.Drawing.Size(0, 20);
+            this.rProd.TabIndex = 1;
             // 
-            // label13
+            // rCust
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(101, 78);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 20);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Kofi Sarpong";
+            this.rCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rCust.AutoSize = true;
+            this.rCust.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rCust.Location = new System.Drawing.Point(101, 78);
+            this.rCust.Name = "rCust";
+            this.rCust.Size = new System.Drawing.Size(0, 20);
+            this.rCust.TabIndex = 1;
             // 
-            // label11
+            // rDate
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(101, 46);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 20);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "03/05/2023";
+            this.rDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rDate.AutoSize = true;
+            this.rDate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rDate.Location = new System.Drawing.Point(101, 46);
+            this.rDate.Name = "rDate";
+            this.rDate.Size = new System.Drawing.Size(0, 20);
+            this.rDate.TabIndex = 1;
             // 
             // label20
             // 
@@ -487,6 +482,48 @@
             this.errorLbl.Text = "Error";
             this.errorLbl.Visible = false;
             // 
+            // barcodeLbl
+            // 
+            this.barcodeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.barcodeLbl.AutoSize = true;
+            this.barcodeLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.barcodeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(138)))), ((int)(((byte)(233)))));
+            this.barcodeLbl.Location = new System.Drawing.Point(466, 194);
+            this.barcodeLbl.Name = "barcodeLbl";
+            this.barcodeLbl.Size = new System.Drawing.Size(0, 25);
+            this.barcodeLbl.TabIndex = 0;
+            this.barcodeLbl.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = global::InventoryApp.Properties.Resources._Barcode_32896;
+            this.pictureBox1.Location = new System.Drawing.Point(453, 149);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(147, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // barcodeCombo
+            // 
+            this.barcodeCombo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.barcodeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.barcodeCombo.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.barcodeCombo.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.barcodeCombo.FormattingEnabled = true;
+            this.barcodeCombo.Location = new System.Drawing.Point(502, 441);
+            this.barcodeCombo.Name = "barcodeCombo";
+            this.barcodeCombo.Size = new System.Drawing.Size(222, 31);
+            this.barcodeCombo.TabIndex = 2;
+            this.barcodeCombo.Visible = false;
+            this.barcodeCombo.SelectedIndexChanged += new System.EventHandler(this.tProd_SelectedIndexChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -499,6 +536,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.barcodeCombo);
             this.Controls.Add(this.tProd);
             this.Controls.Add(this.tCat);
             this.Controls.Add(this.tPrice);
@@ -508,6 +546,7 @@
             this.Controls.Add(this.errorLbl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.barcodeLbl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
@@ -517,10 +556,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "Form3";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
             this.Load += new System.EventHandler(this.Form3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,7 +579,6 @@
         private ComboBox tProd;
         private Label label5;
         private TextBox tQuant;
-        private PictureBox pictureBox1;
         private Button button1;
         private Label label6;
         private TextBox tPrice;
@@ -547,11 +587,11 @@
         private Button button3;
         private Panel panel1;
         private Label label21;
-        private Label label19;
-        private Label label17;
-        private Label label15;
-        private Label label13;
-        private Label label11;
+        private Label rPrice;
+        private Label rQuant;
+        private Label rProd;
+        private Label rCust;
+        private Label rDate;
         private Label label20;
         private Label label18;
         private Label label16;
@@ -562,5 +602,9 @@
         private Label label8;
         private Button button4;
         private Label errorLbl;
+        private Label barcodeLbl;
+        private PictureBox pictureBox1;
+        private ComboBox barcodeCombo;
+        private System.Windows.Forms.Timer timer1;
     }
 }

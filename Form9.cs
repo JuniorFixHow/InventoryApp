@@ -36,6 +36,7 @@ namespace InventoryApp
                 }
                 catch(Exception ex)
                 {
+                    errorLbl.Visible = true;
                     errorLbl.Text = ex.Message;
                 }
             }
@@ -88,6 +89,11 @@ namespace InventoryApp
                 errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
                 errorLbl.Text = "Enter order ID";
             }
+        }
+
+        private void Form9_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

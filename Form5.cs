@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 namespace InventoryApp
 {
@@ -22,12 +24,40 @@ namespace InventoryApp
         {
 
         }
+        private static Random random = new Random();
 
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+        private static string randPass = RandomString(8);
+        private void sendEmail()
+        {
+            string fromEmail = "juniorfixhow@gmail.com";
+            string password = "lfkcsjacgvxmzywu";
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(fromEmail);
+            message.Subject = "Welcome to JuniorFixHow";
+            message.To.Add(new MailAddress(uemail.Text));
+            message.Body = "<html> <body> <p>Hello! You are added as a user. your password is <p> '" + randPass + "' </p>  </p> </body> </html>";
+            message.IsBodyHtml = true;
+
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential(fromEmail, password),
+                EnableSsl = true,
+            };
+            smtpClient.Send(message);
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             db.openConnection();
             MySqlCommand command;
-            if(uname.Text!="" & uemail.Text!="" & uphone.Text!="" & uaddress.Text!="" & utype.Text != "" &upass.Text!="")
+            if(uname.Text!="" & uemail.Text!="" & uphone.Text!="" & uaddress.Text!="" & utype.Text != "")
             {
                 try
                 {
@@ -44,13 +74,14 @@ namespace InventoryApp
                     }
                     else
                     {
-                        string query = "insert into users(uname, uemail, upass, uphone, uaddress, utype) values('" + uname.Text + "', '" + uemail.Text + "', '" + upass.Text + "', '" + uphone.Text + "', '" + uaddress.Text + "', '" + utype.Text + "')";
+                        string query = "insert into users(uname, uemail, upass, uphone, uaddress, utype) values('" + uname.Text + "', '" + uemail.Text + "', '" + randPass + "', '" + uphone.Text + "', '" + uaddress.Text + "', '" + utype.Text + "')";
                         command = new MySqlCommand(query, db.connection);
                         command.ExecuteNonQuery();
                         db.closeConnection();
                         errorLbl.Visible = true;
                         errorLbl.ForeColor = Color.Green;
                         errorLbl.Text = "User created successfully";
+                        sendEmail();
                     }
                 }
                 catch(Exception ex)
@@ -132,6 +163,12 @@ namespace InventoryApp
                             errorLbl.Visible = true;
                             errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
                             errorLbl.Text = "You must at least enter something to update";
+                        }
+                        else if(upass.Text !="" & upass.Text.Length <8)
+                        {
+                            errorLbl.Visible = true;
+                            errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
+                            errorLbl.Text = "Password must at least be 8 characters";
                         }
                         else
                         {

@@ -20,7 +20,21 @@ namespace InventoryApp
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            db.openConnection();
+            string query = "select id, name from category";
+            MySqlCommand command = new MySqlCommand(query, db.connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
 
+            //DataRow item = dt.NewRow();
+            //item[1] = "categories";
+            //dt.Rows.InsertAt(item, 0);
+
+            sCat.DataSource = dt;
+            sCat.DisplayMember = "name";
+            sCat.ValueMember = "id";
         }
 
         private void button4_Click(object sender, EventArgs e)

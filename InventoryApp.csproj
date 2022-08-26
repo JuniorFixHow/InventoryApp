@@ -9,7 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
     <PackageReference Include="MySql.Data" Version="8.0.30" />
+    <PackageReference Include="ZXing.Net" Version="0.16.8" />
+    <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" Version="0.16.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="USB-Barcode-Scanner">
+      <HintPath>USB-Barcode-Scanner.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

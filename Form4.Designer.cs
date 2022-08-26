@@ -253,6 +253,7 @@
             // sCat
             // 
             this.sCat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sCat.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sCat.ForeColor = System.Drawing.SystemColors.WindowText;
             this.sCat.FormattingEnabled = true;

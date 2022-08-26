@@ -40,3 +40,9 @@ E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\Ubiety.Dns.Cor
 E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\ZstdNet.dll
 E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 E:\Users\annan\source\repos\InventoryApp\obj\Debug\net6.0-windows\InventoryApp.csproj.CopyComplete
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\USB-Barcode-Scanner.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\AForge.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\AForge.Video.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\AForge.Video.DirectShow.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\zxing.dll
+E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\ZXing.Windows.Compatibility.dll
