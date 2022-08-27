@@ -266,5 +266,10 @@ namespace InventoryApp
                 errorLbl.Text = "Provide ID to delete a transaction";
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

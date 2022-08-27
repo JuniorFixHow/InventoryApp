@@ -46,7 +46,5 @@ E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\AForge.Video.d
 E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\AForge.Video.DirectShow.dll
 E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\zxing.dll
 E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\ZXing.Windows.Compatibility.dll
-E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\BCrypt.Net-Next.StrongName.dll
 E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\Microsoft.Practices.ServiceLocation.dll
-E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\MD5.dll
 E:\Users\annan\source\repos\InventoryApp\bin\Debug\net6.0-windows\XAct.Core.PCL.dll

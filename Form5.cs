@@ -20,15 +20,7 @@ namespace InventoryApp
         {
             InitializeComponent();
         }
-        private void clear()
-        {
-            uname.Clear();
-            upass.Clear();
-            uemail.Clear();
-            uphone.Clear();
-            uaddress.Clear();
-            uid.Clear();
-        }
+       
         private void Form5_Load(object sender, EventArgs e)
         {
 
@@ -60,7 +52,7 @@ namespace InventoryApp
             message.From = new MailAddress(fromEmail);
             message.Subject = "Welcome to JuniorFixHow";
             message.To.Add(new MailAddress(uemail.Text));
-            message.Body = "<html> <body> <p>Hello! You are added as a user. You can login with: <p>Username: '"+uname.Text+"' </p> and <p>Password: '" + randPass + "' </p>  </p> </body> </html>";
+            message.Body = "<html> <body> <p>Hello! You are added as a user. You can login with: <p>Username: '"+uname.Text+"' </p> <p>Password: '" + randPass + "' </p>  </p> </body> </html>";
             message.IsBodyHtml = true;
 
             var smtpClient = new SmtpClient("smtp.gmail.com")
@@ -87,7 +79,7 @@ namespace InventoryApp
                     {
                         errorLbl.Visible = true;
                         errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
-                        errorLbl.Text = "Username or password alredy exists";
+                        errorLbl.Text = "Username or email alraedy exists";
                         db.closeConnection();
                     }
                     else
@@ -99,8 +91,9 @@ namespace InventoryApp
                         errorLbl.Visible = true;
                         errorLbl.ForeColor = Color.Green;
                         errorLbl.Text = "User created successfully";
-                        clear();
                         sendEmail();
+                        clear();
+                        
                     }
                 }
                 catch(Exception ex)
@@ -164,6 +157,7 @@ namespace InventoryApp
             }
         }
 
+       
         private void button1_Click(object sender, EventArgs e)
         {
             db.openConnection();
@@ -189,14 +183,16 @@ namespace InventoryApp
                             errorLbl.Visible = true;
                             errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
                             errorLbl.Text = "Password must at least be 8 characters";
-                            upass.Focus();
+                           // upass.Focus();
                         }
                         else
                         {
+                            db.openConnection();
                             if (uname.Text != "")
                             {
                                 string query = "update users set uname = '" + uname.Text + "' where uid = '" + uid.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
 
@@ -204,6 +200,7 @@ namespace InventoryApp
                             {
                                 string query = "update users set uemail = '" + uemail.Text + "' where uid = '" + uid.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
 
@@ -211,6 +208,7 @@ namespace InventoryApp
                             {
                                 string query = "update users set uphone = '" + uphone.Text + "' where uid = '" + uid.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
 
@@ -218,6 +216,7 @@ namespace InventoryApp
                             {
                                 string query = "update users set upass = '" + Encrypt(upass.Text.ToString()) + "' where uid = '" + uid.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
 
@@ -225,12 +224,14 @@ namespace InventoryApp
                             {
                                 string query = "update users set uaddress = '" + uaddress.Text + "' where uid = '" + uid.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
                             if (utype.Text != "")
                             {
                                 string query = "update users set utype = '" + utype.Text + "' where uid = '" + uid.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
 
@@ -260,6 +261,15 @@ namespace InventoryApp
                 errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
                 errorLbl.Text = "Enter the ID of the user you are updating";
             }
+        }
+        private void clear()
+        {
+            uname.Clear();
+            upass.Clear();
+            uemail.Clear();
+            uphone.Clear();
+            uaddress.Clear();
+            uid.Clear();
         }
     }
 }

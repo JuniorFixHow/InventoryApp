@@ -52,6 +52,7 @@ namespace InventoryApp
                             {
                                 string query = "update users set uphone = '" + uuphone.Text + "' where uname = '" + uuname.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
 
@@ -61,12 +62,14 @@ namespace InventoryApp
                             {
                                 string query = "update users set uaddress = '" + uuaddress.Text + "' where uname = '" + uuname.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
                             if (uuemail.Text != "")
                             {
                                 string query = "update users set uemail = '" + uuemail.Text + "' where uname = '" + uuname.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
+                                command.ExecuteNonQuery();
                                 db.closeConnection();
                             }
 

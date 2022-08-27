@@ -129,12 +129,12 @@ namespace InventoryApp
                  errorLbl.Text = "Username and password are required!";
              }
              
-            
-           /* this.Close();
+            /*
+           this.Close();
             thread = new Thread(openApp);
             thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();*/
-
+            thread.Start();
+            */
         }
 
         private void button3_Click(object sender, EventArgs e)
