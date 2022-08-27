@@ -18,6 +18,13 @@ namespace InventoryApp
             InitializeComponent();
         }
 
+        private void clear()
+        {
+            uuphone.Clear();
+            uuname.Clear();
+            uuemail.Clear();
+            uuaddress.Clear();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             db.openConnection();
@@ -66,6 +73,7 @@ namespace InventoryApp
                             errorLbl.Visible = true;
                             errorLbl.ForeColor = Color.Green;
                             errorLbl.Text = "Account updated successfully!";
+                            clear();
                         }
                     }
                     else

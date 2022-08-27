@@ -66,6 +66,7 @@
             this.button3.TabIndex = 24;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -261,6 +262,7 @@
             this.sCat.Name = "sCat";
             this.sCat.Size = new System.Drawing.Size(222, 31);
             this.sCat.TabIndex = 19;
+            this.sCat.SelectedIndexChanged += new System.EventHandler(this.sCat_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -277,6 +279,7 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // sProd
             // 

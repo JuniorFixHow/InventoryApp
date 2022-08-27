@@ -102,11 +102,12 @@
             // utype
             // 
             this.utype.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.utype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.utype.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.utype.ForeColor = System.Drawing.SystemColors.WindowText;
             this.utype.FormattingEnabled = true;
             this.utype.Items.AddRange(new object[] {
-            "Management",
+            "Manager",
             "Attendant"});
             this.utype.Location = new System.Drawing.Point(480, 297);
             this.utype.Name = "utype";

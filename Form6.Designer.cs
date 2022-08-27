@@ -32,9 +32,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.passTxt = new System.Windows.Forms.TextBox();
+            this.errorLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.useTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -57,9 +58,10 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.passTxt);
+            this.panel2.Controls.Add(this.errorLbl);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.useTxt);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(293, 146);
             this.panel2.Name = "panel2";
@@ -95,16 +97,28 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox6
+            // passTxt
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox6.Location = new System.Drawing.Point(48, 159);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(222, 26);
-            this.textBox6.TabIndex = 54;
+            this.passTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passTxt.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passTxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.passTxt.Location = new System.Drawing.Point(48, 159);
+            this.passTxt.Multiline = true;
+            this.passTxt.Name = "passTxt";
+            this.passTxt.Size = new System.Drawing.Size(222, 26);
+            this.passTxt.TabIndex = 54;
+            // 
+            // errorLbl
+            // 
+            this.errorLbl.AutoSize = true;
+            this.errorLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.errorLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.errorLbl.Location = new System.Drawing.Point(3, 44);
+            this.errorLbl.Name = "errorLbl";
+            this.errorLbl.Size = new System.Drawing.Size(87, 23);
+            this.errorLbl.TabIndex = 49;
+            this.errorLbl.Text = "Username";
+            this.errorLbl.Visible = false;
             // 
             // label3
             // 
@@ -117,16 +131,16 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Username";
             // 
-            // textBox2
+            // useTxt
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(48, 95);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 26);
-            this.textBox2.TabIndex = 52;
+            this.useTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.useTxt.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.useTxt.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.useTxt.Location = new System.Drawing.Point(48, 95);
+            this.useTxt.Multiline = true;
+            this.useTxt.Name = "useTxt";
+            this.useTxt.Size = new System.Drawing.Size(222, 26);
+            this.useTxt.TabIndex = 52;
             // 
             // label2
             // 
@@ -179,10 +193,11 @@
         private Panel panel2;
         private Label label1;
         private Button button2;
-        private TextBox textBox6;
+        private TextBox passTxt;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox useTxt;
         private Label label2;
         private Button button1;
+        private Label errorLbl;
     }
 }

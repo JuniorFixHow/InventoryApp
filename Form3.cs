@@ -27,6 +27,13 @@ namespace InventoryApp
             tCat.Region = new Region(new Rectangle(3, 3, tCat.Width - 3, tCat.Height - 7));
         }
 
+        private void clear()
+        {
+            textBox1.Clear();
+            tPrice.Clear();
+            tQuant.Clear();
+            tCust.Clear();
+        }
        
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -88,6 +95,7 @@ namespace InventoryApp
                 errorLbl.ForeColor = Color.Green;
                 errorLbl.Text = "Transaction posted";
                 receipt();
+                clear();
             }
             else
             {
@@ -222,6 +230,40 @@ namespace InventoryApp
             if (captureDevice.IsRunning)
             {
                 captureDevice.Stop();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            db.openConnection();
+            MySqlCommand command;
+            if (textBox1.Text != "")
+            {
+                try
+                {
+                    string countQuery = "select count(*) from trans where id = '" + textBox1.Text + "' ";
+                    command = new MySqlCommand(countQuery, db.connection);
+                    Int32 count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        string query = "delete from trans where id = '" + textBox1.Text + "' ";
+                        command = new MySqlCommand(query, db.connection);
+                        command.ExecuteNonQuery();
+                        clear();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    errorLbl.Visible = true;
+                    errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
+                    errorLbl.Text = ex.Message;
+                }
+            }
+            else
+            {
+                errorLbl.Visible = true;
+                errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
+                errorLbl.Text = "Provide ID to delete a transaction";
             }
         }
     }

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using BCrypt.Net;
+using XSystem.Security.Cryptography;
 
 namespace InventoryApp
 {
@@ -19,7 +21,15 @@ namespace InventoryApp
         {
             InitializeComponent();
         }
-
+        private void clear()
+        {
+            uname.Clear();
+            upass.Clear();
+            uemail.Clear();
+            uphone.Clear();
+            uaddress.Clear();
+            uid.Clear();
+        }
         private void Form5_Load(object sender, EventArgs e)
         {
 
@@ -33,6 +43,18 @@ namespace InventoryApp
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
         private static string randPass = RandomString(8);
+
+        public static string Encrypt(string enc)
+        {
+            byte[] data = UTF8Encoding.UTF8.GetBytes(enc);
+            //MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            return Convert.ToBase64String(data);
+
+        }
+
+        //private static string salt = BCrypt.Net.BCrypt.GenerateSalt(13);
+        private static string passwordHash = Encrypt(randPass);
+
         private void sendEmail()
         {
             string fromEmail = "juniorfixhow@gmail.com";
@@ -42,7 +64,7 @@ namespace InventoryApp
             message.From = new MailAddress(fromEmail);
             message.Subject = "Welcome to JuniorFixHow";
             message.To.Add(new MailAddress(uemail.Text));
-            message.Body = "<html> <body> <p>Hello! You are added as a user. your password is <p> '" + randPass + "' </p>  </p> </body> </html>";
+            message.Body = "<html> <body> <p>Hello! You are added as a user. You can login with: <p>Username: '"+uname.Text+"' </p> and <p>Password: '" + randPass + "' </p>  </p> </body> </html>";
             message.IsBodyHtml = true;
 
             var smtpClient = new SmtpClient("smtp.gmail.com")
@@ -74,13 +96,14 @@ namespace InventoryApp
                     }
                     else
                     {
-                        string query = "insert into users(uname, uemail, upass, uphone, uaddress, utype) values('" + uname.Text + "', '" + uemail.Text + "', '" + randPass + "', '" + uphone.Text + "', '" + uaddress.Text + "', '" + utype.Text + "')";
+                        string query = "insert into users(uname, uemail, upass, uphone, uaddress, utype) values('" + uname.Text + "', '" + uemail.Text + "', '" + passwordHash + "', '" + uphone.Text + "', '" + uaddress.Text + "', '" + utype.Text + "')";
                         command = new MySqlCommand(query, db.connection);
-                        command.ExecuteNonQuery();
+                        int data = command.ExecuteNonQuery();
                         db.closeConnection();
                         errorLbl.Visible = true;
                         errorLbl.ForeColor = Color.Green;
                         errorLbl.Text = "User created successfully";
+                        clear();
                         sendEmail();
                     }
                 }
@@ -121,6 +144,7 @@ namespace InventoryApp
                         errorLbl.Visible = true;
                         errorLbl.ForeColor = Color.Green;
                         errorLbl.Text = "User deleted successfully";
+                        clear();
                     }
                     else
                     {
@@ -169,6 +193,7 @@ namespace InventoryApp
                             errorLbl.Visible = true;
                             errorLbl.ForeColor = Color.FromArgb(192, 64, 0);
                             errorLbl.Text = "Password must at least be 8 characters";
+                            upass.Focus();
                         }
                         else
                         {
@@ -216,6 +241,7 @@ namespace InventoryApp
                             errorLbl.Visible = true;
                             errorLbl.ForeColor = Color.Green;
                             errorLbl.Text = "User updated successfully!";
+                            clear();
                         }
                     }
                     else

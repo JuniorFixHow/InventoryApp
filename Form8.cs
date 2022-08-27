@@ -78,8 +78,10 @@ namespace InventoryApp
                         command = new MySqlCommand(query, db.connection);
                         command.ExecuteNonQuery();
                         db.closeConnection();
-                        errorLbl.Visible = true;
+                        sendEmail();
+                        errorLbl.Visible = false;
                         markIcon.Visible = true;
+                        pwdemail.Clear();
                     }
                     else
                     {

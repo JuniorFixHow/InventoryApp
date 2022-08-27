@@ -44,9 +44,25 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "BCrypt.Net-Next.StrongName": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "MD5": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.30, )"
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "XAct.Core.PCL": {
+              "target": "Package",
+              "version": "[0.0.5014, )"
             },
             "ZXing.Net": {
               "target": "Package",

@@ -7,6 +7,7 @@ namespace InventoryApp
         bool repCollapse;
         bool accCollapse;
         Thread thread;
+       
         public Form1()
         {
             InitializeComponent();
@@ -244,7 +245,23 @@ namespace InventoryApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+           //MessageBox.Show(Form6.utype);
+           if(Form6.utype == "Attendant")
+            {
+                panel8.Enabled =false;
+                button8.Enabled = false;
+                button18.Enabled = false;
+                button16.Enabled = false;
+                button22.Enabled = false;
+                button6.Enabled = false;
+                button13.Enabled = false;
+            }
+           else if(Form6.utype == "Admin")
+            {
+                panel5.Enabled = false;
+                button7.Enabled = false;
+            }
+            label3.Text = Form6.utype;
         }
 
         private void button20_Click(object sender, EventArgs e)
