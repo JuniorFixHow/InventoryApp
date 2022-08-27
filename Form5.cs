@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
-using BCrypt.Net;
 using XSystem.Security.Cryptography;
 
 namespace InventoryApp
@@ -47,12 +46,9 @@ namespace InventoryApp
         public static string Encrypt(string enc)
         {
             byte[] data = UTF8Encoding.UTF8.GetBytes(enc);
-            //MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
             return Convert.ToBase64String(data);
 
         }
-
-        //private static string salt = BCrypt.Net.BCrypt.GenerateSalt(13);
         private static string passwordHash = Encrypt(randPass);
 
         private void sendEmail()
@@ -220,7 +216,7 @@ namespace InventoryApp
 
                             if (upass.Text != "")
                             {
-                                string query = "update users set upass = '" + upass.Text + "' where uid = '" + uid.Text + "' ";
+                                string query = "update users set upass = '" + Encrypt(upass.Text.ToString()) + "' where uid = '" + uid.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
                                 db.closeConnection();
                             }
