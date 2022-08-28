@@ -107,6 +107,7 @@
             this.passTxt.Name = "passTxt";
             this.passTxt.Size = new System.Drawing.Size(222, 26);
             this.passTxt.TabIndex = 54;
+            this.passTxt.UseSystemPasswordChar = true;
             // 
             // errorLbl
             // 

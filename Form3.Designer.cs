@@ -310,9 +310,9 @@
             this.label21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label21.Location = new System.Drawing.Point(101, 201);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(97, 20);
+            this.label21.Size = new System.Drawing.Size(94, 20);
             this.label21.TabIndex = 1;
-            this.label21.Text = "JuniorFixHow";
+            this.label21.Text = "JuniorFixhow";
             // 
             // rPrice
             // 
@@ -436,7 +436,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(138)))), ((int)(((byte)(233)))));
-            this.label9.Location = new System.Drawing.Point(58, 1);
+            this.label9.Location = new System.Drawing.Point(57, 1);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 25);
             this.label9.TabIndex = 0;

@@ -50,6 +50,7 @@ namespace InventoryApp
 
                             if (uuphone.Text != "")
                             {
+                                db.openConnection();
                                 string query = "update users set uphone = '" + uuphone.Text + "' where uname = '" + uuname.Text + "' ";
                                 command = new MySqlCommand(query, db.connection);
                                 command.ExecuteNonQuery();

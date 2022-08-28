@@ -256,7 +256,7 @@ namespace InventoryApp
                 button6.Enabled = false;
                 button13.Enabled = false;
             }
-           else if(Form6.utype == "Admin")
+           else if(Form6.utype == "Manager")
             {
                 panel5.Enabled = false;
                 button7.Enabled = false;

@@ -27,13 +27,7 @@ namespace InventoryApp
             tCat.Region = new Region(new Rectangle(3, 3, tCat.Width - 3, tCat.Height - 7));
         }
 
-        private void clear()
-        {
-            textBox1.Clear();
-            tPrice.Clear();
-            tQuant.Clear();
-            tCust.Clear();
-        }
+        
        
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -266,7 +260,13 @@ namespace InventoryApp
                 errorLbl.Text = "Provide ID to delete a transaction";
             }
         }
-
+        private void clear()
+        {
+            textBox1.Clear();
+            tPrice.Clear();
+            tQuant.Clear();
+            tCust.Clear();
+        }
         private void button4_Click(object sender, EventArgs e)
         {
 

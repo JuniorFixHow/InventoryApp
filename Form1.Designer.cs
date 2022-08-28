@@ -53,6 +53,7 @@
             this.button20 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -475,13 +475,24 @@
             this.panel2.Size = new System.Drawing.Size(905, 52);
             this.panel2.TabIndex = 1;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(664, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 30);
+            this.label3.TabIndex = 3;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(145)))), ((int)(((byte)(197)))));
-            this.label1.Location = new System.Drawing.Point(318, 4);
+            this.label1.Location = new System.Drawing.Point(303, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(229, 45);
             this.label1.TabIndex = 3;
@@ -503,7 +514,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(235, 3);
+            this.label2.Location = new System.Drawing.Point(241, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 45);
             this.label2.TabIndex = 3;
@@ -538,17 +549,6 @@
             // 
             this.timer4.Interval = 10;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(664, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 30);
-            this.label3.TabIndex = 3;
             // 
             // Form1
             // 
